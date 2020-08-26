@@ -33,7 +33,7 @@ Patient = spark.read.option("header", "true").csv("/raw-satenderData/Santander_T
 #satender = ks.read_csv('/clouderaDemo/satenderRawDataSpark/*.csv')
 #Patient.show()
 Patient.createOrReplaceTempView("Patient")
-Patient.write.format("parquet").save("/opdata/partcol="+d1+"/")
+Patient.write.format("parquet").save("/optimized-satenderData/partcol="+d1+"/")
 #Patient1 = Patient.withColumn("PATIENTNAME", regexp_replace(col("PATIENTNAME"), "[^a-zA-Z0-9_-]", "****masked****"))
 #Patient1.repartition(1).write.mode('overwrite').parquet('/OptimisedLayer')
 #satender.repartition(1).write.mode('overwrite').parquet('/optimizedSatenderData/satenderdata/')
