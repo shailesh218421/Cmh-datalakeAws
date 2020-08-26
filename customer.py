@@ -28,7 +28,7 @@ spark = SparkSession \
     #.getOrCreate()
 #Patient = spark.read.option("header", "true").csv("/RawData/Patient_02052020.csv")
 #satender=spark.sql("SELECT * FROM nbopoc.rawSatenderData")
-Patient = spark.read.option("header", "true").csv("/nifitemp/Santander_Train_product_data_"+d1+".csv")
+Patient = spark.read.option("header", "true").csv("/raw-satenderData/Santander_Train_product_data_"+d1+".csv")
 #satender = spark.read.option("header", "true").csv("/RawDataLayer/satenderData/model/")
 #satender = ks.read_csv('/clouderaDemo/satenderRawDataSpark/*.csv')
 #Patient.show()
