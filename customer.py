@@ -14,10 +14,7 @@ from datetime import datetime,timedelta
 today = date.today()
 d1 = today.strftime("%Y%m%d")
 #warehouse_location = abspath("/user/hive/warehouse")
-filedaily="Santander_Train_product_data_"
-formatt=".csv"
-nifitempdirectory="/nifitemp/"
-sdfgf=nifitempdirectory+filedaily+d1+formatt
+
 spark = SparkSession \
     .builder \
     .appName("rawToOptimizedDataLoading......") \
@@ -26,9 +23,10 @@ spark = SparkSession \
     #.getOrCreate()
     #.enableHiveSupport() \
     #.getOrCreate()
+    
 #Patient = spark.read.option("header", "true").csv("/RawData/Patient_02052020.csv")
 #satender=spark.sql("SELECT * FROM nbopoc.rawSatenderData")
-Patient = spark.read.option("header", "true").csv("/raw-satenderData/Santander_Train_product_data_"+d1+".csv")
+Patient = spark.read.option("header", "true").csv("/raw-satenderData/Santander_Train_data_"+d1+".csv")
 #satender = spark.read.option("header", "true").csv("/RawDataLayer/satenderData/model/")
 #satender = ks.read_csv('/clouderaDemo/satenderRawDataSpark/*.csv')
 #Patient.show()
